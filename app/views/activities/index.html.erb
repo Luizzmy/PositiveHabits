@@ -1,12 +1,12 @@
 <div class="activities index">
   <h2>Activities</h2>
 
-  <%= link_to("Add New activity", '#', :class => 'action new') %>
+  <%= link_to("Add New activity", new_activity_path(), :class => 'action new') %>
 
   <table class="listing" summary="activity list">
     <tr class="header">
       <th>Activity</th>
-      <th>Goal</th>
+      <th>Daily Goal</th>
       <th>Frequency per week</th>
       <th>Logs</th>
       <th>Actions</th>
@@ -16,6 +16,7 @@
       <td><%= activity.name %></td>
       <td class="center"><%= activity.goal ? activity.goal : 'Please add a goal to your habit' %></td>
         <td class="center"><%= activity.frequency ? activity.frequency : 'Please add how many times a week would you like to achieve your goal' %></td>
+        <td class="center"><%= activity.units ? activity.units : 'Please add the units to measure your goal' %></td>
         <td class="center"><%= activity.daily_logs.size%></td>
       <td class="actions">
         <%= link_to("Show", activity_path(activity), :class => 'action show') %>

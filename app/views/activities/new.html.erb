@@ -1,2 +1,32 @@
-<h1>Activities#new</h1>
-<p>Find me in app/views/activities/new.html.erb</p>
+<%= link_to("<< Back to List", activities_path, :class => 'back-link') %>
+
+<div class="activities new">
+  <h2>Create New Activity</h2>
+
+  <%= form_for(@activity) do |f| %>
+
+    <table summary="Activity form fields">
+      <tr>
+        <th>Name</th>
+        <td><%= f.text_field(:name) %></td>
+      </tr>
+      <tr>
+        <th>Daily Goal</th>
+        <td><%= f.text_field(:goal) %></td>
+      </tr>
+    <tr>
+        <th>Units</th>
+        <td><%= f.text_field(:units) %></td>
+      </tr>
+      <tr>
+        <th>Frequency per week</th>
+        <td><%= f.text_field(:frequency) %></td>
+      </tr>
+    </table>
+
+    <div class="form-buttons">
+      <%= f.submit("Create Activity") %>
+    </div>
+
+  <% end %>
+</div>

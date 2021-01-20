@@ -5,6 +5,7 @@ class CreateActivities < ActiveRecord::Migration[6.1]
       t.integer "user_id"
       t.string "name", :default => '', :null => false 
       t.integer "goal"
+      t.string "units"
       t.integer "frequency"
 
       t.timestamps

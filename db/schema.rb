@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 2021_01_19_110152) do
     t.integer "user_id"
     t.string "name", default: "", null: false
     t.integer "goal"
+    t.string "units"
     t.integer "frequency"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
