@@ -1,2 +1,29 @@
-<h1>Activities#show</h1>
-<p>Find me in app/views/activities/show.html.erb</p>
+<%= link_to("<< Back to List", activities_path, :class => 'back-link') %>
+
+<div class="activities show">
+  <h2>Activity Logs</h2>
+
+  <table summary="Activity detail view">
+    <tr>
+      <th>Name</th>
+      <td><%= @activity.name %></td>
+    </tr>
+    <tr>
+      <th>Goal</th>
+      <td><%= @activity.goal %></td>
+    </tr>
+    <tr>
+      <th>Frequency by week </th>
+      <td><%= @activity.frequency%></td>
+    </tr>
+    <tr>
+      <th>Created</th>
+      <td><%= @activity.created_at %></td>
+    </tr>
+    <tr>
+      <th>Updated</th>
+      <td><%= @activity.updated_at %></td>
+    </tr>
+  </table>
+
+</div>

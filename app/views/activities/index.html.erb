@@ -18,7 +18,7 @@
         <td class="center"><%= activity.frequency ? activity.frequency : 'Please add how many times a week would you like to achieve your goal' %></td>
         <td class="center"><%= activity.daily_logs.size%></td>
       <td class="actions">
-        <%= link_to("Show", '#', :class => 'action show') %>
+        <%= link_to("Show", activity_path(activity), :class => 'action show') %>
         <%= link_to("Edit", '#', :class => 'action edit') %>
         <%= link_to("Delete", '#', :class => 'action delete') %>
       </td>
