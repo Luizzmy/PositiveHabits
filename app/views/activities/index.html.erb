@@ -20,7 +20,9 @@
         <td class="center"><%= activity.daily_logs.size%></td>
       <td class="actions">
         <%= link_to("Show Detailed view and logs", activity_path(activity), :class => 'action show') %>
+        <br/>
         <%= link_to("Edit Activity", edit_activity_path(activity), :class => 'action edit') %>
+        <br/>
         <%= link_to("Delete Activity", delete_activity_path(activity), :class => 'action delete') %>
       </td>
     </tr>

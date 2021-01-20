@@ -1,7 +1,6 @@
 <%= link_to("<< Back to List", activities_path, :class => 'back-link') %>
-
 <div class="activities show">
-  <h2>Activity Logs</h2>
+  <h2>Activity Detail and logs</h2>
 
   <table summary="Activity detail view">
     <tr>
@@ -25,5 +24,30 @@
       <td><%= @activity.updated_at %></td>
     </tr>
   </table>
+
+  <br/>
+
+    <%= link_to("Add a new daily log", new_daily_log_path(), :class => 'action new') %>
+    <br/>
+
+ <table class="listing" summary="Daily Logs">
+    <tr class="header">
+      <th>Date</th>
+      <th>Achieved</th>
+      <th>Comments</th>
+    </tr>
+    <% @daily_logs.each do |daily_log| %>
+    <tr>
+      <td><%= daily_log.created_at %></td>
+      <td class="center"><%= daily_log.achieved %></td>
+        <td class="center"><%= daily_log.comments %></td>
+    </tr>
+    <% end %>
+  </table>
+
+  </table>
+
+
+
 
 </div>

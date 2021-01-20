@@ -1,2 +1,29 @@
-<h1>DailyLogs#new</h1>
-<p>Find me in app/views/daily_logs/new.html.erb</p>
+<%= link_to("<< Back to Activity Detail", activities_path, :class => 'back-link') %>
+
+<div class="daily_logs new">
+  <h2>Add New Daily Log</h2>
+
+  <%= form_for(@daily_log) do |f| %>
+
+    <table summary="DailyLog form fields">
+        <tr>
+        <th>Activity ID</th>
+        <td><%= f.text_field(:activity_id) %></td>
+      </tr>
+      <tr>
+        <th>How much did you achieved today?</th>
+        <td><%= f.text_field(:achieved) %></td>
+      </tr>
+      <tr>
+        <th>Would you like to add any comments?</th>
+        <td><%= f.text_field(:comments) %></td>
+      </tr>
+    <tr>
+    </table>
+
+    <div class="form-buttons">
+      <%= f.submit("Create DailyLog") %>
+    </div>
+
+  <% end %>
+</div>
