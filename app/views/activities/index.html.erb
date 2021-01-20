@@ -19,9 +19,9 @@
         <td class="center"><%= activity.units ? activity.units : 'Please add the units to measure your goal' %></td>
         <td class="center"><%= activity.daily_logs.size%></td>
       <td class="actions">
-        <%= link_to("Show", activity_path(activity), :class => 'action show') %>
-        <%= link_to("Edit", '#', :class => 'action edit') %>
-        <%= link_to("Delete", '#', :class => 'action delete') %>
+        <%= link_to("Show Detailed view and logs", activity_path(activity), :class => 'action show') %>
+        <%= link_to("Edit Activity", edit_activity_path(activity), :class => 'action edit') %>
+        <%= link_to("Delete Activity", delete_activity_path(activity), :class => 'action delete') %>
       </td>
     </tr>
     <% end %>

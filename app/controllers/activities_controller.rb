@@ -12,7 +12,7 @@ class ActivitiesController < ApplicationController
   end
 
   def create
-    @activity = Activity.new(subject_params)
+    @activity = Activity.new(activity_params)
     if @activity.save
       redirect_to(activities_path)
     else
@@ -21,20 +21,31 @@ class ActivitiesController < ApplicationController
   end
 
   def edit
+    @activity = Activity.find(params[:id])
   end
   
   def update
+    @activity = Activity.find(params[:id])
+    if @activity.update(activity_params)
+      redirect_to(activity_path(@activity))
+    else
+      render('edit')
+    end
   end
 
   def delete
+    @activity = Activity.find(params[:id])
   end
 
   def destroy
+    @activity = Activity.find(params[:id])
+    @activity.destroy
+    redirect_to(activities_path)
   end
 
   private 
 
-  def subject_params
+  def activity_params
     params.require(:activity).permit(:name, :goal, :units, :frequency)
   end
 
