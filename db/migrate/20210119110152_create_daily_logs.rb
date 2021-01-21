@@ -1,0 +1,16 @@
+class CreateDailyLogs < ActiveRecord::Migration[6.1]
+  def up
+    create_table :daily_logs do |t|
+
+      t.integer "activity_id"
+      t.integer "achieved", :default => 0, :null => false
+      t.text "comments"
+
+      t.timestamps
+    end
+  end
+
+  def down 
+    drop_table:daily_logs
+  end
+end
