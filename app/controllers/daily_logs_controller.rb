@@ -1,5 +1,6 @@
 class DailyLogsController < ApplicationController
   def index
+    @daily_logs=DailyLog.all
   end
 
   def show

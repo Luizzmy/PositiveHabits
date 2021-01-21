@@ -1,4 +1,6 @@
 <div class="activities index">
+<%= link_to("<< Back to Index", '/', :class => 'back-link') %>
+
   <h2>Activities</h2>
 
   <%= link_to("Add New activity", new_activity_path(), :class => 'action new') %>
@@ -8,6 +10,7 @@
       <th>Activity</th>
       <th>Daily Goal</th>
       <th>Frequency per week</th>
+      <th>Units</th>
       <th>Logs</th>
       <th>Actions</th>
     </tr>

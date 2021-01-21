@@ -1,2 +1,20 @@
-<h1>DailyLogs#index</h1>
-<p>Find me in app/views/daily_logs/index.html.erb</p>
+<div class="Logs index">
+<%= link_to("<< Back to List", activities_path, :class => 'back-link') %>
+
+<h2>All logs</h2>
+
+<table class="listing" summary="Daily Logs">
+    <tr class="header">
+      <th>Date</th>
+      <th>Achieved</th>
+      <th>Comments</th>
+    </tr>
+    <% @daily_logs.each do |daily_log| %>
+    <tr>
+      <td><%= daily_log.created_at.strftime("%d %b %Y") %></td>
+      <td class="center"><%= daily_log.achieved %></td>
+        <td class="center"><%= truncate(daily_log.comments, :length=>10)%></td>
+    </tr>
+    <% end %>
+  </table>
+  </div>
