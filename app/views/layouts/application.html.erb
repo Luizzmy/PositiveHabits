@@ -11,12 +11,19 @@
   </head>
 
   <body>
+    <div id="main">
   <% if notice %>
   <p class="alert alert-success"><%= notice %></p>
 <% end %>
 <% if alert %>
   <p class="alert alert-danger"><%= alert %></p>
 <% end %>
+      <div id="content">
     <%= yield %>
+      </div>
+        </div>
+        <div id="footer">
+      <p id="copyright">Created by:Gabriel Valenzuela</p>
+    </div>
   </body>
 </html>

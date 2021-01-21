@@ -17,26 +17,42 @@ html {
 }
 
 body {
-  width: 100%;
-  min-width: 980px;
-  height: 100%;
-  margin: 0;
-  padding: 0;
+  padding-left: 100px;
+  padding-right: 100px;
+  h2 {
+    width: 100%;
+    text-align: center;
+  }
   font: 14px $sans_serif;
   color: $dark_brown;
 }
+
+#content h2 {
+  color: $light_brown;
+}
+
 
 p, td, ul, ol, li, dl, dt, dd {
   font-family: $sans_serif;
 }
 
 img { border: none; }
-table { border-collapse: collapse; }
 
-table tr th, table tr td {
-  vertical-align: top;
-  text-align: left;
-  padding: 3px;
+.index {
+  table {
+    clear: both;
+    width: 100%;
+    tr td { border: 1px solid #666666; }
+  }
+}
+
+.show {
+  table {
+    clear: both; margin: 0 200px; width: 300px;
+    &.wide { width: 600px; margin: 0 50px; }
+    tr th { white-space: nowrap; padding-right: 5px; }
+    tr td { border: 1px solid #666666; }
+  }
 }
 a, a:visited { color: $red; }
 a:hover {}
@@ -69,18 +85,27 @@ a:hover {}
   color: $light_brown;
 }
 
-#content { padding: 10px; }
+
 
 #footer {
   clear: both;
   height: 2.5em;
   text-align: right;
-  background: $light_brown;
+  background: $light_brown image-url('footer_gradient.png') repeat-y;
   color: $yellow;
 
   p {
     margin: 0;
     padding: 0.5em 1em;
+  }
+}
+
+#content {
+  padding-left: 100px;
+  padding-right: 100px;
+  h2 {
+    width: 100%;
+    text-align: center;
   }
 }
 
@@ -111,6 +136,6 @@ a:hover {}
 }
 
 /* Content */
-#content h2 {
-  color: $light_brown;
-}
+// #content h2 {
+//   color: $light_brown;
+// }
