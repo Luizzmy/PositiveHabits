@@ -1,5 +1,6 @@
 class DailyLogsController < ApplicationController
   def index
+    @daily_logs=DailyLog.all
   end
 
   def show
@@ -20,6 +21,6 @@ class DailyLogsController < ApplicationController
   end
 
   def daily_params
-    params.require(:daily_log).permit(:activity_id, :achieved, :comments)
+    params.require(:daily_log).permit(:activity_id, :date, :achieved, :comments)
   end
 end

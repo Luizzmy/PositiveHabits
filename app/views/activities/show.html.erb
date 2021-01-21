@@ -26,7 +26,7 @@
   </table>
 
   <br/>
-
+  <%= image_tag('plus_sign.png', :size => '11x11', :alt=>'+')%>
     <%= link_to("Add a new daily log", new_daily_log_path(), :class => 'action new') %>
     <br/>
 
@@ -38,7 +38,7 @@
     </tr>
     <% @daily_logs.each do |daily_log| %>
     <tr>
-      <td><%= daily_log.created_at.strftime("%d %b %Y") %></td>
+      <td><%= daily_log.date.strftime("%d %b %Y") %></td>
       <td class="center"><%= daily_log.achieved %></td>
         <td class="center"><%= truncate(daily_log.comments, :length=>10)%></td>
     </tr>

@@ -1,9 +1,10 @@
 <%= link_to("<< Back to List", activities_path, :class => 'back-link') %>
-
 <div class="activities new">
   <h2>Create New Activity</h2>
 
   <%= form_for(@activity) do |f| %>
+<%= error_messages_for(f.object)%>
+
 
     <table summary="Activity form fields">
       <tr>
@@ -20,7 +21,7 @@
       </tr>
       <tr>
         <th>Frequency per week</th>
-        <td><%= f.text_field(:frequency) %></td>
+        <td><%= f.select(:frequency, 1..7) %></td>
       </tr>
     </table>
 
