@@ -1,0 +1,53 @@
+<%= link_to("<< Back to List", activities_path, :class => 'back-link') %>
+<div class="activities show">
+  <h2>Activity Detail and logs</h2>
+
+  <table summary="Activity detail view">
+    <tr>
+      <th>Name</th>
+      <td><%= @activity.name %></td>
+    </tr>
+    <tr>
+      <th>Goal</th>
+      <td><%= @activity.goal %> <%= @activity.units %></td>
+    </tr>
+    <tr>
+      <th>Frequency by week </th>
+      <td><%= @activity.frequency%></td>
+    </tr>
+    <tr>
+      <th>Created</th>
+      <td><%= @activity.created_at %></td>
+    </tr>
+    <tr>
+      <th>Updated</th>
+      <td><%= @activity.updated_at %></td>
+    </tr>
+  </table>
+
+  <br/>
+
+    <%= link_to("Add a new daily log", new_daily_log_path(), :class => 'action new') %>
+    <br/>
+
+ <table class="listing" summary="Daily Logs">
+    <tr class="header">
+      <th>Date</th>
+      <th>Achieved</th>
+      <th>Comments</th>
+    </tr>
+    <% @daily_logs.each do |daily_log| %>
+    <tr>
+      <td><%= daily_log.created_at.strftime("%d %b %Y") %></td>
+      <td class="center"><%= daily_log.achieved %></td>
+        <td class="center"><%= truncate(daily_log.comments, :length=>10)%></td>
+    </tr>
+    <% end %>
+  </table>
+
+  </table>
+
+
+
+
+</div>
