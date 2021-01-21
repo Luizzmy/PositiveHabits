@@ -11,6 +11,11 @@
   </head>
 
   <body>
+      <%=
+        link_to_if(current_user.nil?, "Login", signed_in?, class: 'btn btn-primary m-5') do
+            link_to('Sign out',  destroy_user_session_path, :method => 'delete', class: 'btn btn-danger m-5')
+        end
+    %>
     <div id="main">
   <% if notice %>
   <p class="alert alert-success"><%= notice %></p>

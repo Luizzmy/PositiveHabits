@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
 
-  get 'daily_logs/index'
-  get 'daily_logs/show'
-  get 'daily_logs/new'
-  devise_for :users
+  devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register', edit: 'settings' }
+  
   root 'frontpage#index'
 
   resources :activities do 
