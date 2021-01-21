@@ -4,11 +4,16 @@
   <h2>Add New Daily Log</h2>
 
   <%= form_for(@daily_log) do |f| %>
+<%= error_messages_for(f.object)%>
 
     <table summary="DailyLog form fields">
         <tr>
         <th>Activity ID</th>
-        <td><%= f.text_field(:activity_id) %></td>
+        <td><%= f.select(:activity_id, Activity.all.map{|a| [a.name, a.id]}) %></td>
+      </tr>
+      <tr>
+        <th>Date</th>
+        <td><%= f.date_select(:date) %></td>
       </tr>
       <tr>
         <th>How much did you achieved today?</th>
@@ -16,7 +21,7 @@
       </tr>
       <tr>
         <th>Would you like to add any comments?</th>
-        <td><%= f.text_field(:comments) %></td>
+        <td><%= f.text_area(:comments, :size=> '20x5') %></td>
       </tr>
     <tr>
     </table>

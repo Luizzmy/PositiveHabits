@@ -21,6 +21,6 @@ class DailyLogsController < ApplicationController
   end
 
   def daily_params
-    params.require(:daily_log).permit(:activity_id, :achieved, :comments)
+    params.require(:daily_log).permit(:activity_id, :date, :achieved, :comments)
   end
 end

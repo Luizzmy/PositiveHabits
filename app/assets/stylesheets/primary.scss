@@ -135,7 +135,30 @@ a:hover {}
 
 }
 
-/* Content */
-// #content h2 {
-//   color: $light_brown;
-// }
+/* Errors */
+.field_with_errors {
+  label { color: #AA0000; }
+  input { border: 1px solid red; }
+}
+
+#error-explanation {
+  width: 400px;
+  padding: 0; margin: 0 auto 1.5em;
+  border: 1px solid #AA0000;
+  background-color: #FFFFFF;
+  font-size: 12px;
+  h2 {
+    font-weight: bold;
+    font-size: 12px;
+    padding: 5px 5px 5px 15px; margin: 0;
+    width: 380px;
+    background-color: #AA0000; color: #FFFFFF;
+  }
+  p {
+    color: #333333;
+    margin: 0; padding: 3px 0.5em;
+  }
+  ul { margin-top: 0; }
+  ul li { list-style: square; }
+}
+

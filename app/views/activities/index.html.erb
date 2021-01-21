@@ -5,7 +5,11 @@
 
   <%= image_tag('plus_sign.png', :size => '11x11', :alt=>'+')%>
   <%= link_to("Add New activity", new_activity_path(), :class => 'action new') %>
-
+  <br/>
+  or
+  <br/>
+  <%= image_tag('plus_sign.png', :size => '11x11', :alt=>'+')%>
+  <%= link_to("Add a new Log", new_daily_log_path(), :class => 'action new') %>
   <table class="listing" summary="activity list">
     <tr class="header">
       <th>Activity</th>
