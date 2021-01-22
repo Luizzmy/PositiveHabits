@@ -23,8 +23,9 @@ ActiveRecord::Schema.define(version: 2021_01_21_153230) do
   end
 
   create_table "daily_logs", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.integer "user_id"
     t.integer "activity_id"
-    t.date "date", default: "2021-01-21"
+    t.date "date", default: "2021-01-22"
     t.integer "achieved", default: 0, null: false
     t.text "comments"
     t.datetime "created_at", precision: 6, null: false

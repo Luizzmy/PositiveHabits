@@ -1,8 +1,9 @@
 class ActivitiesController < ApplicationController
   before_action :authenticate_user!
+  before_action :getuser, :only=>[:create]
 
   def index
-    @activities = Activity.all
+    @activities = Activity.where(:user_id=>current_user.id)
   end
 
   def show
@@ -16,6 +17,7 @@ class ActivitiesController < ApplicationController
 
   def create
     @activity = Activity.new(activity_params)
+    @activity.assign_attributes({:user_id => current_user.id})
     if @activity.save
       flash[:notice] ="Activity created succesfully"
       redirect_to(activities_path)
@@ -51,8 +53,12 @@ class ActivitiesController < ApplicationController
 
   private 
 
+  def getuser
+    @user=request.session_options[:id]
+  end
+
   def activity_params
-    params.require(:activity).permit(:name, :goal, :units, :frequency)
+    params.require(:activity).permit(:user_id, :name, :goal, :units, :frequency)
   end
 
 end

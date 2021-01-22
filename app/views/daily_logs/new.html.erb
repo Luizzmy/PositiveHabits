@@ -7,8 +7,9 @@
 <%= error_messages_for(f.object)%>
 
     <table summary="DailyLog form fields">
+
         <tr>
-        <th>Activity ID</th>
+        <th>Choose Activity</th>
         <td><%= f.select(:activity_id, Activity.all.map{|a| [a.name, a.id]}) %></td>
       </tr>
       <tr>
