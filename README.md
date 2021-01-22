@@ -11,7 +11,10 @@
 - mysql2 0.5
 
 ### Database creation
-- For creating the database you may run the command in your terminal `rails db:migrate`
+- For creating the database you may run the command in your terminal in the root of the project `rails db:migrate`
 
 ### Database initialization
 - For intializing the database server you may run `sudo service mysql start`
+
+### Server
+- For running in your local server you may run the command in your terminal `rails server` 
