@@ -7,9 +7,10 @@
 <%= error_messages_for(f.object)%>
 
     <table summary="DailyLog form fields">
+
         <tr>
-        <th>Activity ID</th>
-        <td><%= f.select(:activity_id, Activity.all.map{|a| [a.name, a.id]}) %></td>
+        <th>Choose Activity</th>
+        <td><%= f.select(:activity_id, Activity.where(:user_id=>current_user.id).map{|a| [a.name, a.id]}) %></td>
       </tr>
       <tr>
         <th>Date</th>
