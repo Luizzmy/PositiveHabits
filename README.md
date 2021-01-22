@@ -7,11 +7,11 @@
 * Rails 6.1.1
 * Bundler 2.2.5
 
-* System dependencies
+### System dependencies
 - mysql2 0.5
 
-* Database creation
+### Database creation
 - For creating the database you may run the command in your terminal `rails db:migrate`
 
-* Database initialization
+### Database initialization
 - For intializing the database server you may run `sudo service mysql start`
