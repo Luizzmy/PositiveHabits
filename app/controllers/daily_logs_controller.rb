@@ -1,8 +1,9 @@
 class DailyLogsController < ApplicationController
-
+  before_action :authenticate_user!
 
   def index
     @daily_logs=DailyLog.all
+    @activities=Activity.all
   end
 
   def new

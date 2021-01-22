@@ -6,14 +6,21 @@
 <table class="listing" summary="Daily Logs">
     <tr class="header">
       <th>Date</th>
+      <th>Activity ID</th>
       <th>Achieved</th>
       <th>Comments</th>
+      <th>Delete</th>
     </tr>
     <% @daily_logs.each do |daily_log| %>
     <tr>
-      <td><%= daily_log.created_at.strftime("%d %b %Y") %></td>
+      <td><%= daily_log.date.strftime("%d %b %Y") %></td>
+      <td><%= daily_log.activity_id%></td>
       <td class="center"><%= daily_log.achieved %></td>
+  
         <td class="center"><%= truncate(daily_log.comments, :length=>10)%></td>
+        <td class="center"><%= link_to daily_log_path(daily_log), method: :delete do %><%= image_tag('cross_sign.png', :size => '11x11', :alt=>'+')%>
+<% end %>
+        </td>
     </tr>
     <% end %>
   </table>

@@ -11,6 +11,9 @@
   </head>
 
   <body>
+  <div id="header">
+  <h1>Positive Habits</h1>
+  </div>
       <%=
         link_to_if(current_user.nil?, "Login", signed_in?, class: 'btn btn-primary m-5') do
             link_to('Sign out',  destroy_user_session_path, :method => 'delete', class: 'btn btn-danger m-5')
