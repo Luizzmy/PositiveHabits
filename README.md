@@ -1,4 +1,4 @@
-# Wlecome to Positive Habits App
+# Welcome to Positive Habits App
 ## You may create new acitivities and log daily records of how much did you achieve for each activity, as well as have the daily goal and frequency by week for such activities
 
 ## To run this app in your local environment you may need the following requirments:
