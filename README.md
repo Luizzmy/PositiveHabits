@@ -16,5 +16,6 @@
 ### Database initialization
 - For intializing the database server you may run `sudo service mysql start`
 
-### Server
+### Running the app
+- For the first time you may need to run `bundle install` to install all gems dependencies
 - For running in your local server you may run the command in your terminal `rails server` 
