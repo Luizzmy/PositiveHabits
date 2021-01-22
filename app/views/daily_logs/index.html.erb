@@ -6,7 +6,7 @@
 <table class="listing" summary="Daily Logs">
     <tr class="header">
       <th>Date</th>
-      <th>Activity ID</th>
+      <th>Activity</th>
       <th>Achieved</th>
       <th>Comments</th>
       <th>Delete</th>
@@ -14,7 +14,8 @@
     <% @daily_logs.each do |daily_log| %>
     <tr>
       <td><%= daily_log.date.strftime("%d %b %Y") %></td>
-      <td><%= daily_log.activity_id%></td>
+      <td><%@activity= Activity.where(:id=>daily_log.activity_id)%>
+      <%=@activity.map {|activity| activity.name}%></td>
       <td class="center"><%= daily_log.achieved %></td>
   
         <td class="center"><%= truncate(daily_log.comments, :length=>10)%></td>
